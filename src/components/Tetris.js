@@ -5,20 +5,23 @@ import Display from "./Display";
 import StarsButton from "./StarsButton";
 
 import { createStage } from "../gameHelpers";
+import { StyledTetrisWrapper, StyledTetris } from "./styles/StyledTetris";
 
 const Tetris = () => {
   return (
-    <div>
-      <Stage stage={createStage()} />
-      <aside>
-        <div>
-          <Display text="Score" />
-          <Display text="Rows" />
-          <Display text="Level" />
-        </div>
-        <StarsButton />
-      </aside>
-    </div>
+    <StyledTetrisWrapper>
+      <StyledTetris>
+        <Stage stage={createStage()} />
+        <aside>
+          <div>
+            <Display text="Score" />
+            <Display text="Rows" />
+            <Display text="Level" />
+          </div>
+          <StarsButton />
+        </aside>
+      </StyledTetris>
+    </StyledTetrisWrapper>
   );
 };
 
